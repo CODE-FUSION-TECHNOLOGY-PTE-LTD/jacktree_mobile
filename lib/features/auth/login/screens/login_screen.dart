@@ -10,6 +10,8 @@ class LoginAuthScreen extends StatefulWidget {
 class _LoginAuthScreenState extends State<LoginAuthScreen> {
   @override
   Widget build(BuildContext context) {
-    return const Scaffold();
+    return Scaffold(
+      backgroundColor: Theme.of(context).colorScheme.primary,
+    );
   }
 }

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:jack_tree_app/features/splash_screen.dart';
+import 'package:jack_tree_app/splash_screen.dart';
 
 void main() {
   runApp(const JackTreeApp());
