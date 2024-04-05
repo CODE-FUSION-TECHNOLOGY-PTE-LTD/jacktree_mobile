@@ -33,12 +33,12 @@ class _LoginAuthScreenState extends State<LoginAuthScreen> {
                   children: [
                     Padding(
                       padding: EdgeInsets.only(
-                          bottom: MediaQuery.of(context).size.height * 0.10),
+                          bottom: MediaQuery.of(context).size.height * 0.08),
                       child: Row(
                         children: [
                           Padding(
                             padding: EdgeInsets.fromLTRB(
-                                MediaQuery.of(context).size.width * 0.2,
+                                MediaQuery.of(context).size.width * 0.1,
                                 0,
                                 2,
                                 0),
@@ -187,7 +187,7 @@ class _LoginAuthScreenState extends State<LoginAuthScreen> {
                               onPressed: () {
                                 Navigator.of(context).push(MaterialPageRoute(
                                     builder: ((context) =>
-                                        const ForgotPasswordMainScreen())));
+                                        ForgotPasswordMainScreen())));
                               },
                               child: Text(
                                 'Forgot Password?',

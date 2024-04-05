@@ -37,12 +37,12 @@ class _RegisterScreenState extends ConsumerState<RegisterScreen> {
                   children: [
                     Padding(
                       padding: EdgeInsets.only(
-                          bottom: MediaQuery.of(context).size.height * 0.10),
+                          bottom: MediaQuery.of(context).size.height * 0.08),
                       child: Row(
                         children: [
                           Padding(
                             padding: EdgeInsets.fromLTRB(
-                                MediaQuery.of(context).size.width * 0.2,
+                                MediaQuery.of(context).size.width * 0.1,
                                 0,
                                 2,
                                 0),

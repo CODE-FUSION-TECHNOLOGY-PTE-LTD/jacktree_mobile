@@ -11,23 +11,18 @@ class AuthIconWidget extends StatelessWidget {
       children: [
         Padding(
           padding:
-              EdgeInsets.only(top: MediaQuery.of(context).size.height * 0.12),
+              EdgeInsets.only(top: MediaQuery.of(context).size.height * 0.11),
           child: SizedBox(
             width: MediaQuery.of(context).size.width * 0.5,
-            height: MediaQuery.of(context).size.height * 0.2,
+            height: MediaQuery.of(context).size.height * 0.23,
             child: Column(
               children: [
                 Image.asset(
                   'assets/logo-wight-lk.png',
-                  width: 100,
-                  height: 100,
+                  width: 300,
+                  height: 200,
                   fit: BoxFit.contain,
                 ),
-                Text('JackTree', style: Theme.of(context).textTheme.titleLarge),
-                const SizedBox(
-                  height: 0.5,
-                ),
-                Text('Free Adds', style: Theme.of(context).textTheme.bodyMedium)
               ],
             ),
           ),
