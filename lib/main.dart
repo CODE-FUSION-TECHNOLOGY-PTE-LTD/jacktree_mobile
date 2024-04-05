@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:jack_tree_app/splash_screen.dart';
 
 void main() {
@@ -21,12 +22,42 @@ class JackTreeApp extends StatelessWidget {
           secondary: const Color(0xFFF3AF4A),
         ),
         textTheme: brightness == Brightness.light
-            ? ThemeData.light()
-                .textTheme
-                .copyWith(bodyLarge: const TextStyle(color: Colors.white))
-            : ThemeData.dark()
-                .textTheme
-                .copyWith(bodyLarge: const TextStyle(color: Colors.white)),
+            ? ThemeData.light().textTheme.copyWith(
+                  bodyLarge: const TextStyle(color: Colors.black, fontSize: 16),
+                  bodyMedium: GoogleFonts.poppins(
+                    textStyle: const TextStyle(
+                      color: Colors.white,
+                      fontSize: 12,
+                      fontWeight: FontWeight.normal,
+                    ),
+                  ),
+                  bodySmall: const TextStyle(color: Colors.black, fontSize: 10),
+                  titleLarge: GoogleFonts.prostoOne(
+                    textStyle: const TextStyle(
+                      color: Color(0xFFF3AF4A),
+                      fontSize: 30,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                )
+            : ThemeData.dark().textTheme.copyWith(
+                  bodyLarge: const TextStyle(color: Colors.white),
+                  bodyMedium: GoogleFonts.poppins(
+                    textStyle: const TextStyle(
+                      color: Colors.white,
+                      fontSize: 12,
+                      fontWeight: FontWeight.normal,
+                    ),
+                  ),
+                  bodySmall: const TextStyle(color: Colors.white, fontSize: 10),
+                  titleLarge: GoogleFonts.prostoOne(
+                    textStyle: const TextStyle(
+                      color: Color(0xFFF3AF4A),
+                      fontSize: 30,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
 
         // ignore: deprecated_member_use
         useMaterial3: true,
