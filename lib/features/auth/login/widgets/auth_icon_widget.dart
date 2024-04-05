@@ -17,10 +17,11 @@ class AuthIconWidget extends StatelessWidget {
             height: MediaQuery.of(context).size.height * 0.2,
             child: Column(
               children: [
-                Icon(
-                  Icons.location_on_outlined,
-                  size: 100.0,
-                  color: Theme.of(context).colorScheme.secondary,
+                Image.asset(
+                  'assets/logo-wight-lk.png',
+                  width: 100,
+                  height: 100,
+                  fit: BoxFit.contain,
                 ),
                 Text('JackTree', style: Theme.of(context).textTheme.titleLarge),
                 const SizedBox(

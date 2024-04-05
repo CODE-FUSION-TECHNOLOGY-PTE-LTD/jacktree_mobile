@@ -1,22 +1,26 @@
 import 'package:flutter/material.dart';
-import 'package:jack_tree_app/features/auth/forgot_password/screens/forgot_password_email_scren.dart';
-import 'package:jack_tree_app/features/auth/register/screens/register_screen.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:jack_tree_app/features/auth/login/widgets/auth_icon_widget.dart';
 
-class LoginAuthScreen extends StatefulWidget {
-  const LoginAuthScreen({super.key});
+class RegisterScreen extends ConsumerStatefulWidget {
+  const RegisterScreen({super.key});
 
   @override
-  State<LoginAuthScreen> createState() => _LoginAuthScreenState();
+  ConsumerState<ConsumerStatefulWidget> createState() => _RegisterScreenState();
 }
 
-class _LoginAuthScreenState extends State<LoginAuthScreen> {
-  final loginFormKeyAuth = GlobalKey<FormState>();
-  final TextEditingController loginEmailauthController =
+class _RegisterScreenState extends ConsumerState<RegisterScreen> {
+  final registerFormKeyAuth = GlobalKey<FormState>();
+  final TextEditingController registerEmailauthController =
       TextEditingController();
-  final TextEditingController loginPasswordauthController =
+  final TextEditingController registerPasswordauthController =
+      TextEditingController();
+  final TextEditingController registerFirstNameauthController =
+      TextEditingController();
+  final TextEditingController registerSureNameauthController =
       TextEditingController();
   bool _ispwdVisible = false;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -53,7 +57,7 @@ class _LoginAuthScreenState extends State<LoginAuthScreen> {
                                   height: 10,
                                 ),
                                 Text(
-                                  'Login with your account to continue.',
+                                  'Find Your Favorite Thigs here',
                                   style:
                                       Theme.of(context).textTheme.displaySmall,
                                 ),
@@ -69,7 +73,7 @@ class _LoginAuthScreenState extends State<LoginAuthScreen> {
 
                 //email
                 Form(
-                  key: loginFormKeyAuth,
+                  key: registerFormKeyAuth,
                   child: Column(
                     children: [
                       Container(
@@ -81,7 +85,84 @@ class _LoginAuthScreenState extends State<LoginAuthScreen> {
                           borderRadius: BorderRadius.circular(20),
                         ),
                         child: TextFormField(
-                            controller: loginEmailauthController,
+                            controller: registerEmailauthController,
+                            decoration: const InputDecoration(
+                              labelText: 'Enter Your First Name.',
+                              labelStyle: TextStyle(
+                                color: Color.fromRGBO(0, 0, 0, 0.5),
+                              ),
+                              contentPadding: EdgeInsets.only(left: 20),
+                              prefixIcon: Opacity(
+                                opacity: 0.5,
+                                child: Icon(Icons.people_alt_rounded),
+                              ),
+                              border: InputBorder.none,
+                              enabledBorder: InputBorder.none,
+                              focusedBorder: InputBorder.none,
+                            ),
+                            textAlignVertical: TextAlignVertical.center,
+                            textCapitalization: TextCapitalization.none,
+                            keyboardType: TextInputType.emailAddress,
+                            style: const TextStyle(color: Colors.black),
+                            validator: (value) {
+                              if (value == null || value.trim().isEmpty) {
+                                return 'Please enter a first name.';
+                              }
+                              return null;
+                            }),
+                      ),
+                      const SizedBox(
+                        height: 20,
+                      ),
+                      Container(
+                        width: MediaQuery.of(context).size.width * 0.8,
+                        height: MediaQuery.of(context).size.height * 0.07,
+                        padding: const EdgeInsets.all(5),
+                        decoration: BoxDecoration(
+                          color: Colors.grey[100], // Set gray background color
+                          borderRadius: BorderRadius.circular(20),
+                        ),
+                        child: TextFormField(
+                            controller: registerEmailauthController,
+                            decoration: const InputDecoration(
+                              labelText: 'Enter Your Sure Name.',
+                              labelStyle: TextStyle(
+                                color: Color.fromRGBO(0, 0, 0, 0.5),
+                              ),
+                              contentPadding: EdgeInsets.only(left: 20),
+                              prefixIcon: Opacity(
+                                opacity: 0.5,
+                                child: Icon(Icons.people),
+                              ),
+                              border: InputBorder.none,
+                              enabledBorder: InputBorder.none,
+                              focusedBorder: InputBorder.none,
+                            ),
+                            textAlignVertical: TextAlignVertical.center,
+                            textCapitalization: TextCapitalization.none,
+                            keyboardType: TextInputType.emailAddress,
+                            style: const TextStyle(color: Colors.black),
+                            validator: (value) {
+                              if (value == null || value.trim().isEmpty) {
+                                return 'Please enter a sure name.';
+                              }
+                              return null;
+                            }),
+                      ),
+
+                      const SizedBox(
+                        height: 20,
+                      ),
+                      Container(
+                        width: MediaQuery.of(context).size.width * 0.8,
+                        height: MediaQuery.of(context).size.height * 0.07,
+                        padding: const EdgeInsets.all(5),
+                        decoration: BoxDecoration(
+                          color: Colors.grey[100], // Set gray background color
+                          borderRadius: BorderRadius.circular(20),
+                        ),
+                        child: TextFormField(
+                            controller: registerEmailauthController,
                             decoration: const InputDecoration(
                               labelText: 'Enter Your Email.',
                               labelStyle: TextStyle(
@@ -122,7 +203,7 @@ class _LoginAuthScreenState extends State<LoginAuthScreen> {
                           borderRadius: BorderRadius.circular(20),
                         ),
                         child: TextFormField(
-                          controller: loginPasswordauthController,
+                          controller: registerPasswordauthController,
                           obscureText: !_ispwdVisible,
                           decoration: InputDecoration(
                             labelText: 'Enter Your Password.',
@@ -178,25 +259,9 @@ class _LoginAuthScreenState extends State<LoginAuthScreen> {
                           },
                         ),
                       ),
+
                       const SizedBox(
-                        height: 10,
-                      ),
-                      Column(
-                        children: [
-                          TextButton(
-                              onPressed: () {
-                                Navigator.of(context).push(MaterialPageRoute(
-                                    builder: ((context) =>
-                                        const ForgotPasswordMainScreen())));
-                              },
-                              child: Text(
-                                'Forgot Password?',
-                                style: Theme.of(context).textTheme.bodyMedium,
-                              ))
-                        ],
-                      ),
-                      const SizedBox(
-                        height: 10,
+                        height: 30,
                       ),
                       SizedBox(
                         width: MediaQuery.of(context).size.width * 0.8,
@@ -207,7 +272,7 @@ class _LoginAuthScreenState extends State<LoginAuthScreen> {
                             backgroundColor:
                                 Theme.of(context).colorScheme.secondary,
                           ),
-                          child: Text('Sign in',
+                          child: Text('Sign Up',
                               style: Theme.of(context).textTheme.labelLarge),
                         ),
                       ),
@@ -215,19 +280,17 @@ class _LoginAuthScreenState extends State<LoginAuthScreen> {
                         height: 20,
                       ),
                       Text(
-                        'Dont Have Account?',
+                        'Already Have Account?',
                         style: Theme.of(context).textTheme.bodyMedium,
                       ),
                       Padding(
                         padding: const EdgeInsets.all(0.2),
                         child: TextButton(
                           onPressed: () {
-                            Navigator.of(context).push(MaterialPageRoute(
-                              builder: ((context) => const RegisterScreen()),
-                            ));
+                            Navigator.of(context).pop();
                           },
                           child: Text(
-                            'Register Now',
+                            'Login Now',
                             style: Theme.of(context).textTheme.labelMedium,
                           ),
                         ),
