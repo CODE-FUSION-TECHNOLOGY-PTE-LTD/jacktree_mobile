@@ -21,6 +21,25 @@ class ForgotPasswordMainScreen extends StatelessWidget {
                 const AuthIconWidget(),
                 Column(
                   children: [
+                    Row(
+                      children: [
+                        Padding(
+                          padding: EdgeInsets.fromLTRB(
+                              MediaQuery.of(context).size.width * 0.1, 0, 2, 0),
+                          child: Column(
+                            children: [
+                              Text(
+                                'Forgot Password!',
+                                style: Theme.of(context).textTheme.displayLarge,
+                              ),
+                              const SizedBox(
+                                height: 10,
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
                     Padding(
                       padding: EdgeInsets.only(
                           bottom: MediaQuery.of(context).size.height * 0.08),
@@ -35,15 +54,7 @@ class ForgotPasswordMainScreen extends StatelessWidget {
                             child: Column(
                               children: [
                                 Text(
-                                  'Forgot Password?',
-                                  style:
-                                      Theme.of(context).textTheme.displayLarge,
-                                ),
-                                const SizedBox(
-                                  height: 10,
-                                ),
-                                Text(
-                                  'Plese send Your Email to Get OTP',
+                                  'Please Enter your Email Address',
                                   style:
                                       Theme.of(context).textTheme.displaySmall,
                                 ),
@@ -100,7 +111,7 @@ class ForgotPasswordMainScreen extends StatelessWidget {
                             }),
                       ),
                       const SizedBox(
-                        height: 20,
+                        height: 30,
                       ),
                       SizedBox(
                         width: MediaQuery.of(context).size.width * 0.8,
@@ -116,7 +127,7 @@ class ForgotPasswordMainScreen extends StatelessWidget {
                         ),
                       ),
                       const SizedBox(
-                        height: 10,
+                        height: 20,
                       ),
                       SizedBox(
                         width: MediaQuery.of(context).size.width * 0.8,

@@ -35,6 +35,25 @@ class _RegisterScreenState extends ConsumerState<RegisterScreen> {
                 const AuthIconWidget(),
                 Column(
                   children: [
+                    Row(
+                      children: [
+                        Padding(
+                          padding: EdgeInsets.fromLTRB(
+                              MediaQuery.of(context).size.width * 0.1, 0, 2, 0),
+                          child: Column(
+                            children: [
+                              Text(
+                                'Create Account',
+                                style: Theme.of(context).textTheme.displayLarge,
+                              ),
+                              const SizedBox(
+                                height: 10,
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
                     Padding(
                       padding: EdgeInsets.only(
                           bottom: MediaQuery.of(context).size.height * 0.08),
@@ -49,15 +68,7 @@ class _RegisterScreenState extends ConsumerState<RegisterScreen> {
                             child: Column(
                               children: [
                                 Text(
-                                  'Welcome Back!',
-                                  style:
-                                      Theme.of(context).textTheme.displayLarge,
-                                ),
-                                const SizedBox(
-                                  height: 10,
-                                ),
-                                Text(
-                                  'Find Your Favorite Thigs here',
+                                  'Please Fill this and Register.',
                                   style:
                                       Theme.of(context).textTheme.displaySmall,
                                 ),
