@@ -38,6 +38,7 @@ dependencies:
   google_fonts: ^6.2.1
   flutter_riverpod: ^2.5.1
   flutter_launcher_icons: "^0.13.1"
+  flutter_svg: ^2.0.10+1
 
 
 
@@ -79,6 +80,12 @@ flutter:
     - assets/cars/car2.webp
     - assets/cars/car3.webp
     - assets/cars/car4.webp
+    - assets/catergories/car.svg
+    - assets/catergories/education.svg
+    - assets/catergories/jobs.svg
+    - assets/catergories/pets.svg
+    - assets/catergories/RealState.svg
+
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
