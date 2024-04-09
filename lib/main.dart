@@ -32,7 +32,8 @@ class JackTreeApp extends StatelessWidget {
                       fontWeight: FontWeight.normal,
                     ),
                   ),
-                  bodySmall: const TextStyle(color: Colors.black, fontSize: 10),
+                  bodySmall: const TextStyle(
+                      color: Color.fromARGB(255, 192, 188, 188), fontSize: 10),
                   //button text
                   labelLarge: GoogleFonts.robotoFlex(
                     textStyle: const TextStyle(
@@ -92,7 +93,8 @@ class JackTreeApp extends StatelessWidget {
                       fontWeight: FontWeight.normal,
                     ),
                   ),
-                  bodySmall: const TextStyle(color: Colors.white, fontSize: 10),
+                  bodySmall: const TextStyle(
+                      color: Color.fromARGB(255, 192, 188, 188), fontSize: 10),
                   //button text
                   labelLarge: GoogleFonts.robotoFlex(
                     textStyle: const TextStyle(
