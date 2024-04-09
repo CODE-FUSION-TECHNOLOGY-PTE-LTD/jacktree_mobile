@@ -48,8 +48,10 @@ dev_dependencies:
 flutter_launcher_icons:
   android: "launcher_icon"
   ios: true
-  image_path: "assets/logo-wight-lk.png"
+  image_path: "assets/1024.png"
   min_sdk_android: 21 
+  adaptive_icon_background: "#FF02AE89"
+  adaptive_icon_foreground: "assets/logo_forground.png"
   
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
@@ -73,7 +75,6 @@ flutter:
   assets:
     - assets/logo-wight-lk.png
     - assets/profile.avif   
-    - assets/adds/Screenshot_2.png
     - assets/cars/car1.webp
     - assets/cars/car2.webp
     - assets/cars/car3.webp
