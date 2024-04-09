@@ -37,11 +37,20 @@ dependencies:
   cupertino_icons: ^1.0.6
   google_fonts: ^6.2.1
   flutter_riverpod: ^2.5.1
+  flutter_launcher_icons: "^0.13.1"
+
+
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
 
+flutter_launcher_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/logo-wight-lk.png"
+  min_sdk_android: 21 
+  
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
   # activated in the `analysis_options.yaml` file located at the root of your
@@ -63,7 +72,12 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/logo-wight-lk.png
-   
+    - assets/profile.avif   
+    - assets/adds/Screenshot_2.png
+    - assets/cars/car1.webp
+    - assets/cars/car2.webp
+    - assets/cars/car3.webp
+    - assets/cars/car4.webp
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

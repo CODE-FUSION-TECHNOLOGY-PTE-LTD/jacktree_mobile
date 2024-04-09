@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:jack_tree_app/features/auth/forgot_password/screens/forgot_password_email_scren.dart';
 import 'package:jack_tree_app/features/auth/register/screens/register_screen.dart';
 import 'package:jack_tree_app/features/auth/login/widgets/auth_icon_widget.dart';
+import 'package:jack_tree_app/features/home/screens/home_main_screen.dart';
 
 class LoginAuthScreen extends StatefulWidget {
   const LoginAuthScreen({super.key});
@@ -202,7 +203,11 @@ class _LoginAuthScreenState extends State<LoginAuthScreen> {
                         width: MediaQuery.of(context).size.width * 0.8,
                         height: MediaQuery.of(context).size.height * 0.06,
                         child: ElevatedButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.of(context).push(MaterialPageRoute(
+                                builder: ((context) =>
+                                    const HomeMainScreen())));
+                          },
                           style: ElevatedButton.styleFrom(
                             backgroundColor:
                                 Theme.of(context).colorScheme.secondary,
