@@ -46,11 +46,13 @@ class _HomeMainScreenState extends ConsumerState<HomeMainScreen> {
       bottomNavigationBar: Container(
         color: Colors.white,
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 22, vertical: 20),
+          padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 15),
           child: GNav(
               backgroundColor: Colors.white,
               color: Colors.black,
               activeColor: Theme.of(context).colorScheme.secondary,
+              curve: Curves.linearToEaseOut,
+              tabBorderRadius: 10,
               tabBackgroundColor:
                   Theme.of(context).colorScheme.secondary.withOpacity(0.5),
               gap: 8,
