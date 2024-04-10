@@ -37,11 +37,23 @@ dependencies:
   cupertino_icons: ^1.0.6
   google_fonts: ^6.2.1
   flutter_riverpod: ^2.5.1
+  flutter_launcher_icons: "^0.13.1"
+  flutter_svg: ^2.0.10+1
+
+
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
 
+flutter_launcher_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/1024.png"
+  min_sdk_android: 21 
+  adaptive_icon_background: "#FF02AE89"
+  adaptive_icon_foreground: "assets/logo_forground.png"
+  
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
   # activated in the `analysis_options.yaml` file located at the root of your
@@ -63,7 +75,17 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/logo-wight-lk.png
-   
+    - assets/profile.avif   
+    - assets/cars/car1.webp
+    - assets/cars/car2.webp
+    - assets/cars/car3.webp
+    - assets/cars/car4.webp
+    - assets/catergories/car.svg
+    - assets/catergories/education.svg
+    - assets/catergories/jobs.svg
+    - assets/catergories/pets.svg
+    - assets/catergories/RealState.svg
+
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

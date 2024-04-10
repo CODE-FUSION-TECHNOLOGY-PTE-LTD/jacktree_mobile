@@ -24,6 +24,7 @@ class JackTreeApp extends StatelessWidget {
         textTheme: brightness == Brightness.light
             ? ThemeData.light().textTheme.copyWith(
                   bodyLarge: const TextStyle(color: Colors.black, fontSize: 16),
+
                   bodyMedium: GoogleFonts.poppins(
                     textStyle: const TextStyle(
                       color: Colors.white,
@@ -31,7 +32,8 @@ class JackTreeApp extends StatelessWidget {
                       fontWeight: FontWeight.normal,
                     ),
                   ),
-                  bodySmall: const TextStyle(color: Colors.black, fontSize: 10),
+                  bodySmall: const TextStyle(
+                      color: Color.fromARGB(255, 192, 188, 188), fontSize: 10),
                   //button text
                   labelLarge: GoogleFonts.robotoFlex(
                     textStyle: const TextStyle(
@@ -74,6 +76,13 @@ class JackTreeApp extends StatelessWidget {
                       letterSpacing: 0.2,
                     ),
                   ),
+                  displayMedium: GoogleFonts.roboto(
+                    textStyle: const TextStyle(
+                      color: Colors.black,
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
                 )
             : ThemeData.dark().textTheme.copyWith(
                   bodyLarge: const TextStyle(color: Colors.white),
@@ -84,7 +93,8 @@ class JackTreeApp extends StatelessWidget {
                       fontWeight: FontWeight.normal,
                     ),
                   ),
-                  bodySmall: const TextStyle(color: Colors.white, fontSize: 10),
+                  bodySmall: const TextStyle(
+                      color: Color.fromARGB(255, 192, 188, 188), fontSize: 10),
                   //button text
                   labelLarge: GoogleFonts.robotoFlex(
                     textStyle: const TextStyle(
@@ -117,6 +127,13 @@ class JackTreeApp extends StatelessWidget {
                       color: Colors.white,
                       fontSize: 11,
                       letterSpacing: 0.2,
+                    ),
+                  ),
+                  displayMedium: GoogleFonts.roboto(
+                    textStyle: const TextStyle(
+                      color: Colors.white,
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
                     ),
                   ),
                 ),
