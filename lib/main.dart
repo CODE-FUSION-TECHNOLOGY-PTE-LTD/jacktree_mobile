@@ -1,9 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:jack_tree_app/splash_screen.dart';
 
 void main() {
-  runApp(const JackTreeApp());
+  runApp(
+    ProviderScope(
+      child: const JackTreeApp(),
+    ),
+  );
 }
 
 class JackTreeApp extends StatelessWidget {
@@ -48,6 +53,13 @@ class JackTreeApp extends StatelessWidget {
                     textStyle: const TextStyle(
                       color: Color(0xFFF3AF4A),
                       fontSize: 30,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  labelSmall: GoogleFonts.roboto(
+                    textStyle: const TextStyle(
+                      color: Colors.black,
+                      fontSize: 14,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
@@ -133,6 +145,13 @@ class JackTreeApp extends StatelessWidget {
                     textStyle: const TextStyle(
                       color: Colors.white,
                       fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  labelSmall: GoogleFonts.roboto(
+                    textStyle: const TextStyle(
+                      color: Colors.white,
+                      fontSize: 14,
                       fontWeight: FontWeight.bold,
                     ),
                   ),

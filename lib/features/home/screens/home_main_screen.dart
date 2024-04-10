@@ -176,7 +176,7 @@ class _HomeMainScreenState extends ConsumerState<HomeMainScreen> {
                                     builder: (context) => ListDrawerWidget()));
                               },
                               onTapCancel: () {
-                                Navigator.of(context).pop();
+                                print('Profile list drawer cancelled');
                               },
                               child: Container(
                                 width: 40,
