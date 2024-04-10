@@ -11,6 +11,7 @@ class HomeMainScreen extends ConsumerStatefulWidget {
 
 class _HomeMainScreenState extends ConsumerState<HomeMainScreen> {
   int selectedIndex = 0;
+  bool showAllgridItems = false;
 
   final List<String> imagePaths = [
     'https://people.com/thmb/fsmp8lHFoKX5FH9JFffcHnE4Qzo=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc():focal(539x0:541x2)/Popping-Bubbles-1-793efa18dea14eee899ce57412679d2a.jpg',
@@ -319,32 +320,50 @@ class _HomeMainScreenState extends ConsumerState<HomeMainScreen> {
                       style: Theme.of(context).textTheme.displayMedium,
                     ),
                     const Spacer(),
+                    Padding(
+                      padding: const EdgeInsets.fromLTRB(0, 0, 22, 0),
+                      child: GestureDetector(
+                        onTap: () {
+                          print('see more');
+                          setState(() {
+                            showAllgridItems = !showAllgridItems;
+                          });
+                        },
+                        child: Text(
+                          'See more',
+                          style: Theme.of(context).textTheme.displaySmall,
+                        ),
+                      ),
+                    ),
                   ],
                 ),
               ),
-            Padding(
-              padding: const EdgeInsets.fromLTRB(22, 0, 22, 0),
-              child: SizedBox(
-                height: 800,
-                child: GridView.builder(
-                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: 2),
-                  itemCount: 4,
-                  itemBuilder: (context, index) {
-                    return SizedBox(
-                      height: 900,
-                      child: Card(
-                        color: Colors.white,
-                        child: SizedBox(
-                          height: 900,
+
+            //catergory list grid
+            SizedBox(
+              height: 800,
+              child: Padding(
+                padding: const EdgeInsets.fromLTRB(22, 0, 22, 0),
+                child: SizedBox(
+                  height: showAllgridItems ? null : null,
+                  child: GridView.builder(
+                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 2,
+                    ),
+                    itemCount: showAllgridItems ? 8 : 2,
+                    itemBuilder: (context, index) {
+                      return SingleChildScrollView(
+                        scrollDirection: Axis.vertical,
+                        child: Card(
+                          color: Colors.white,
                           child: Column(
                             children: [
                               Padding(
                                 padding: const EdgeInsets.all(8.0),
                                 child: Image.asset(
                                   'assets/cars/car1.webp',
-                                  width: 250, // Adjust width as needed
-                                  height: 75, // Adjust height as needed
+                                  width: 250,
+                                  height: 75,
                                 ),
                               ),
                               Text(
@@ -366,12 +385,12 @@ class _HomeMainScreenState extends ConsumerState<HomeMainScreen> {
                             ],
                           ),
                         ),
-                      ),
-                    );
-                  },
+                      );
+                    },
+                  ),
                 ),
               ),
-            )
+            ),
           ],
         ),
       ),
