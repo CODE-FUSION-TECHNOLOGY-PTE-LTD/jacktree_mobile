@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
+import 'package:jack_tree_app/features/home/widget/list_drawe_Widget.dart';
 
 class HomeMainScreen extends ConsumerStatefulWidget {
   const HomeMainScreen({super.key});
@@ -171,10 +172,11 @@ class _HomeMainScreenState extends ConsumerState<HomeMainScreen> {
                             padding: const EdgeInsets.all(8.0),
                             child: GestureDetector(
                               onTap: () {
-                                print('Profile list drawer');
+                                Navigator.of(context).push(MaterialPageRoute(
+                                    builder: (context) => ListDrawerWidget()));
                               },
                               onTapCancel: () {
-                                print('Profile list drawer cancelled');
+                                Navigator.of(context).pop();
                               },
                               child: Container(
                                 width: 40,
