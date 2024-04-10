@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:google_nav_bar/google_nav_bar.dart';
 
 class HomeMainScreen extends ConsumerStatefulWidget {
   const HomeMainScreen({super.key});
@@ -12,6 +13,7 @@ class HomeMainScreen extends ConsumerStatefulWidget {
 class _HomeMainScreenState extends ConsumerState<HomeMainScreen> {
   int selectedIndex = 0;
   bool showAllgridItems = false;
+  bool showAllgridItemsNew = false;
 
   final List<String> imagePaths = [
     'https://people.com/thmb/fsmp8lHFoKX5FH9JFffcHnE4Qzo=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc():focal(539x0:541x2)/Popping-Bubbles-1-793efa18dea14eee899ce57412679d2a.jpg',
@@ -40,7 +42,43 @@ class _HomeMainScreenState extends ConsumerState<HomeMainScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 213, 211, 211),
+      backgroundColor: const Color(0xFFEAEBED),
+      bottomNavigationBar: Container(
+        color: Colors.white,
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 22, vertical: 20),
+          child: GNav(
+              backgroundColor: Colors.white,
+              color: Colors.black,
+              activeColor: Theme.of(context).colorScheme.secondary,
+              tabBackgroundColor:
+                  Theme.of(context).colorScheme.secondary.withOpacity(0.5),
+              gap: 8,
+              padding: EdgeInsets.all(16),
+              textStyle: TextStyle(
+                  color:
+                      Colors.black), // the tab button gap between icon and text
+
+              tabs: [
+                GButton(
+                  icon: Icons.home,
+                  text: 'Home',
+                ),
+                GButton(
+                  icon: Icons.shopping_basket,
+                  text: 'Cart',
+                ),
+                GButton(
+                  icon: Icons.search,
+                  text: 'Search',
+                ),
+                GButton(
+                  icon: Icons.people,
+                  text: 'Profile',
+                )
+              ]),
+        ),
+      ),
       body: SingleChildScrollView(
         scrollDirection: Axis.vertical,
         child: Column(
@@ -324,14 +362,13 @@ class _HomeMainScreenState extends ConsumerState<HomeMainScreen> {
                       padding: const EdgeInsets.fromLTRB(0, 0, 22, 0),
                       child: GestureDetector(
                         onTap: () {
-                          print('see more');
                           setState(() {
                             showAllgridItems = !showAllgridItems;
                           });
                         },
                         child: Text(
-                          'See more',
-                          style: Theme.of(context).textTheme.displaySmall,
+                          'See all',
+                          style: TextStyle(color: Colors.grey, fontSize: 10),
                         ),
                       ),
                     ),
@@ -341,7 +378,7 @@ class _HomeMainScreenState extends ConsumerState<HomeMainScreen> {
 
             //catergory list grid
             SizedBox(
-              height: 800,
+              height: 260,
               child: Padding(
                 padding: const EdgeInsets.fromLTRB(22, 0, 22, 0),
                 child: SizedBox(
@@ -352,14 +389,20 @@ class _HomeMainScreenState extends ConsumerState<HomeMainScreen> {
                     ),
                     itemCount: showAllgridItems ? 8 : 2,
                     itemBuilder: (context, index) {
-                      return SingleChildScrollView(
-                        scrollDirection: Axis.vertical,
-                        child: Card(
-                          color: Colors.white,
+                      return Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Container(
+                          height: 800,
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(
+                              10,
+                            ),
+                          ),
                           child: Column(
                             children: [
                               Padding(
-                                padding: const EdgeInsets.all(8.0),
+                                padding: const EdgeInsets.all(8),
                                 child: Image.asset(
                                   'assets/cars/car1.webp',
                                   width: 250,
@@ -375,11 +418,20 @@ class _HomeMainScreenState extends ConsumerState<HomeMainScreen> {
                                 style: TextStyle(color: Colors.black),
                               ),
                               Container(
-                                height: 50,
+                                height: 30,
                                 width: double.infinity,
                                 child: ElevatedButton(
+                                  style: ButtonStyle(
+                                    backgroundColor:
+                                        MaterialStateProperty.all<Color>(
+                                      Theme.of(context).colorScheme.primary,
+                                    ),
+                                  ),
                                   onPressed: () {},
-                                  child: Text('View'),
+                                  child: Text('View',
+                                      style: TextStyle(
+                                          color: const Color.fromARGB(
+                                              255, 255, 255, 255))),
                                 ),
                               )
                             ],
@@ -391,6 +443,88 @@ class _HomeMainScreenState extends ConsumerState<HomeMainScreen> {
                 ),
               ),
             ),
+            //New listed
+            Padding(
+              padding: const EdgeInsets.fromLTRB(22, 16, 0, 2),
+              child: Row(
+                children: [
+                  Text(
+                    'New Listed',
+                    style: Theme.of(context).textTheme.displayMedium,
+                  ),
+                  const Spacer(),
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(0, 0, 22, 0),
+                    child: GestureDetector(
+                      onTap: () {
+                        setState(() {
+                          showAllgridItemsNew = !showAllgridItemsNew;
+                        });
+                      },
+                      child: Text(
+                        'See all',
+                        style: TextStyle(color: Colors.grey, fontSize: 10),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+
+            SizedBox(
+              height: 280,
+              child: Padding(
+                padding: const EdgeInsets.fromLTRB(22, 0, 22, 0),
+                child: SizedBox(
+                  height: showAllgridItemsNew ? null : null,
+                  child: Container(
+                    child: ListView.builder(
+                      itemCount: showAllgridItemsNew ? 8 : 2,
+                      itemBuilder: (context, index) {
+                        return Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Container(
+                            height: 100,
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(
+                                10,
+                              ),
+                            ),
+                            child: Row(
+                              children: [
+                                Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Image.asset(
+                                    'assets/cars/car2.webp',
+                                    width: 75,
+                                    height: 75,
+                                  ),
+                                ),
+                                Text(
+                                  'Car new',
+                                  style: TextStyle(color: Colors.black),
+                                ),
+                                const Spacer(),
+                                Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Text(
+                                    '800',
+                                    style: TextStyle(
+                                        color: const Color.fromARGB(
+                                            255, 223, 2, 2)),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        );
+                      },
+                    ),
+                  ),
+                ),
+              ),
+            )
           ],
         ),
       ),
