@@ -89,7 +89,7 @@ class _HomeMainScreenState extends ConsumerState<HomeMainScreen> {
           children: [
             Container(
               width: MediaQuery.of(context).size.width,
-              height: MediaQuery.of(context).size.width,
+              height: 355,
               child: Stack(
                 children: [
                   Positioned(
