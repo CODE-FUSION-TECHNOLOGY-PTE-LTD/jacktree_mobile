@@ -76,7 +76,7 @@ class _CatergoryViewScreenState extends ConsumerState<CatergoryViewScreen> {
                                   width: 40,
                                   height: 40,
                                   decoration: BoxDecoration(
-                                    color: Colors.white.withOpacity(0.5),
+                                    color: Colors.white.withOpacity(0.8),
                                     borderRadius: BorderRadius.circular(5),
                                   ),
                                   child: ClipRRect(
@@ -98,12 +98,12 @@ class _CatergoryViewScreenState extends ConsumerState<CatergoryViewScreen> {
                       top: 60,
                       left: 10,
                       child: Padding(
-                        padding: const EdgeInsets.fromLTRB(8, 16, 8, 8),
+                        padding: const EdgeInsets.fromLTRB(16, 16, 8, 8),
                         child: Row(
                           children: [
                             GestureDetector(
                               onTap: () {
-                                print('cart press');
+                                Navigator.of(context).pop();
                               },
                               onTapCancel: () {
                                 print('cart press cancelled');
@@ -112,7 +112,7 @@ class _CatergoryViewScreenState extends ConsumerState<CatergoryViewScreen> {
                                 width: 40,
                                 height: 40,
                                 decoration: BoxDecoration(
-                                  color: Colors.white.withOpacity(0.5),
+                                  color: Color.fromARGB(220, 255, 255, 255),
                                   borderRadius: BorderRadius.circular(5),
                                 ),
                                 child: Icon(
@@ -122,6 +122,190 @@ class _CatergoryViewScreenState extends ConsumerState<CatergoryViewScreen> {
                               ),
                             ),
                           ],
+                        ),
+                      ),
+                    ),
+                    //image
+
+                    Positioned(
+                      top: MediaQuery.of(context).size.height * 0.25,
+                      left: MediaQuery.of(context).size.width * 0.10,
+                      child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          CircleAvatar(
+                            radius: 70,
+                            backgroundImage:
+                                AssetImage('assets/cars/car2.webp'),
+                          ),
+                        ],
+                      ),
+                    ),
+                    Positioned(
+                      top: 150,
+                      right: 0,
+                      child: Container(
+                        width: MediaQuery.of(context).size.width * 0.5,
+                        height: 300,
+                        child: Padding(
+                          padding: const EdgeInsets.all(1.0),
+                          child: Column(
+                            children: [
+                              Container(
+                                height: 75,
+                                decoration: BoxDecoration(
+                                  color: Colors.white,
+                                  borderRadius: BorderRadius.only(
+                                      topLeft: Radius.circular(20),
+                                      bottomLeft: Radius.circular(20)),
+                                ),
+                                child: Row(
+                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  children: [
+                                    Padding(
+                                      padding:
+                                          const EdgeInsets.fromLTRB(6, 1, 0, 0),
+                                      child: CircleAvatar(
+                                        radius: 20,
+                                        backgroundImage:
+                                            AssetImage('assets/profile.avif'),
+                                      ),
+                                    ),
+                                    SizedBox(width: 10),
+                                    Padding(
+                                      padding: const EdgeInsets.fromLTRB(
+                                          1, 16, 2, 1),
+                                      child: Column(
+                                        children: [
+                                          Text('John Smith',
+                                              textAlign: TextAlign.start,
+                                              style: TextStyle(
+                                                  color: Colors.black,
+                                                  fontSize: 12,
+                                                  fontWeight: FontWeight.bold)),
+                                          Text('example@gmail.com',
+                                              textAlign: TextAlign.start,
+                                              style: TextStyle(
+                                                  color: Colors.black,
+                                                  fontSize: 12)),
+                                        ],
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              SizedBox(height: 20),
+                              Container(
+                                height: 75,
+                                decoration: BoxDecoration(
+                                  color: Colors.white,
+                                  borderRadius: BorderRadius.only(
+                                    topLeft: Radius.circular(20),
+                                    bottomLeft: Radius.circular(20),
+                                  ),
+                                ),
+                                child: Row(
+                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  children: [
+                                    Padding(
+                                      padding:
+                                          const EdgeInsets.fromLTRB(6, 1, 0, 0),
+                                      child: Icon(
+                                        Icons.phone,
+                                        size: 40,
+                                        color: Theme.of(context)
+                                            .colorScheme
+                                            .primary,
+                                      ),
+                                    ),
+                                    SizedBox(width: 10),
+                                    Padding(
+                                      padding: const EdgeInsets.fromLTRB(
+                                          1, 16, 2, 1),
+                                      child: Column(
+                                        children: [
+                                          Padding(
+                                            padding: const EdgeInsets.fromLTRB(
+                                                16, 8, 2, 1),
+                                            child: Text('+94-75 ********',
+                                                textAlign: TextAlign.start,
+                                                style: TextStyle(
+                                                    color: Colors.black,
+                                                    fontSize: 12,
+                                                    fontWeight:
+                                                        FontWeight.bold)),
+                                          ),
+                                          GestureDetector(
+                                            onTap: () {
+                                              print('mobile');
+                                            },
+                                            child: Icon(
+                                              Icons.visibility_off,
+                                              size: 20,
+                                              color: Color.fromARGB(
+                                                  255, 90, 88, 88),
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              SizedBox(height: 20),
+                              Container(
+                                height: 75,
+                                decoration: BoxDecoration(
+                                  color: Colors.white,
+                                  borderRadius: BorderRadius.only(
+                                    topLeft: Radius.circular(20),
+                                    bottomLeft: Radius.circular(20),
+                                  ),
+                                ),
+                                child: Row(
+                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  children: [
+                                    Padding(
+                                      padding:
+                                          const EdgeInsets.fromLTRB(6, 1, 0, 0),
+                                      child: Icon(
+                                        Icons.chat,
+                                        size: 40,
+                                        color: Theme.of(context)
+                                            .colorScheme
+                                            .primary,
+                                      ),
+                                    ),
+                                    SizedBox(width: 10),
+                                    Padding(
+                                      padding: const EdgeInsets.fromLTRB(
+                                          1, 16, 2, 1),
+                                      child: Column(
+                                        children: [
+                                          Padding(
+                                            padding: const EdgeInsets.fromLTRB(
+                                                16, 8, 2, 1),
+                                            child: GestureDetector(
+                                              onTap: () {
+                                                print('chat');
+                                              },
+                                              child: Text('Chat With Us',
+                                                  textAlign: TextAlign.start,
+                                                  style: TextStyle(
+                                                      color: Colors.black,
+                                                      fontSize: 12,
+                                                      fontWeight:
+                                                          FontWeight.bold)),
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ],
+                          ),
                         ),
                       ),
                     ),
