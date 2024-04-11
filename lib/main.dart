@@ -29,7 +29,16 @@ class JackTreeApp extends StatelessWidget {
         textTheme: brightness == Brightness.light
             ? ThemeData.light().textTheme.copyWith(
                   bodyLarge: const TextStyle(color: Colors.black, fontSize: 16),
-
+                  headlineSmall: TextStyle(
+                      color: Colors.black,
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                      fontFamily: AutofillHints.transactionAmount),
+                  headlineMedium: TextStyle(
+                      color: Theme.of(context).colorScheme.primary,
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                      fontFamily: AutofillHints.transactionAmount),
                   bodyMedium: GoogleFonts.poppins(
                     textStyle: const TextStyle(
                       color: Colors.white,
@@ -98,6 +107,16 @@ class JackTreeApp extends StatelessWidget {
                 )
             : ThemeData.dark().textTheme.copyWith(
                   bodyLarge: const TextStyle(color: Colors.white),
+                  headlineSmall: TextStyle(
+                      color: Colors.black,
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                      fontFamily: AutofillHints.transactionAmount),
+                  headlineMedium: TextStyle(
+                      color: Theme.of(context).colorScheme.primary,
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                      fontFamily: AutofillHints.transactionAmount),
                   bodyMedium: GoogleFonts.poppins(
                     textStyle: const TextStyle(
                       color: Colors.white,
