@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
+import 'package:jack_tree_app/features/catergory_view/screens/catergory_view_screen.dart';
 import 'package:jack_tree_app/features/home/widget/list_drawe_Widget.dart';
 
 class HomeMainScreen extends ConsumerStatefulWidget {
@@ -431,7 +432,13 @@ class _HomeMainScreenState extends ConsumerState<HomeMainScreen> {
                                       Theme.of(context).colorScheme.primary,
                                     ),
                                   ),
-                                  onPressed: () {},
+                                  onPressed: () {
+                                    Navigator.of(context)
+                                        .push(MaterialPageRoute(
+                                      builder: (context) =>
+                                          CatergoryViewScreen(),
+                                    ));
+                                  },
                                   child: Text('View',
                                       style: TextStyle(
                                           color: const Color.fromARGB(
