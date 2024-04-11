@@ -177,7 +177,7 @@ class _CatergoryViewScreenState extends ConsumerState<CatergoryViewScreen> {
                                       SizedBox(width: 10),
                                       Padding(
                                         padding: const EdgeInsets.fromLTRB(
-                                            1, 16, 2, 1),
+                                            16, 16, 2, 1),
                                         child: Column(
                                           children: [
                                             Text('For Rent By',
