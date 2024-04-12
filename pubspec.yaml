@@ -87,6 +87,9 @@ flutter:
     - assets/catergories/jobs.svg
     - assets/catergories/pets.svg
     - assets/catergories/RealState.svg
+    - assets/prices/price1.jpg
+    - assets/prices/price2.jpg
+    - assets/prices/price3.jpg
 
 
   # An image asset can refer to one or more resolution-specific "variants", see

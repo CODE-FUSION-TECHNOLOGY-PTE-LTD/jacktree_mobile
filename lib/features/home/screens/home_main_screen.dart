@@ -5,6 +5,7 @@ import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:jack_tree_app/features/about_us/screens/about_us_screen.dart';
 import 'package:jack_tree_app/features/catergory_view/screens/catergory_view_screen.dart';
 import 'package:jack_tree_app/features/home/widget/list_drawe_Widget.dart';
+import 'package:jack_tree_app/features/priceing/screens/price_screen.dart';
 
 class HomeMainScreen extends ConsumerStatefulWidget {
   const HomeMainScreen({super.key});
@@ -82,8 +83,12 @@ class _HomeMainScreenState extends ConsumerState<HomeMainScreen> {
                   },
                 ),
                 GButton(
-                  icon: Icons.people,
-                  text: 'Profile',
+                  icon: Icons.attach_money,
+                  text: 'Prices',
+                  onPressed: () {
+                    Navigator.of(context).push(
+                        MaterialPageRoute(builder: (ctx) => PriceViewScreen()));
+                  },
                 )
               ]),
         ),
