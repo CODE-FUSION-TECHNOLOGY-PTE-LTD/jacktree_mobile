@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
+import 'package:jack_tree_app/features/about_us/screens/about_us_screen.dart';
 import 'package:jack_tree_app/features/catergory_view/screens/catergory_view_screen.dart';
 import 'package:jack_tree_app/features/home/widget/list_drawe_Widget.dart';
 
@@ -73,8 +74,12 @@ class _HomeMainScreenState extends ConsumerState<HomeMainScreen> {
                   text: 'Cart',
                 ),
                 GButton(
-                  icon: Icons.search,
-                  text: 'Search',
+                  icon: Icons.people_alt_rounded,
+                  text: 'About Us',
+                  onPressed: () {
+                    Navigator.of(context).push(
+                        MaterialPageRoute(builder: (ctx) => AboutUsScreen()));
+                  },
                 ),
                 GButton(
                   icon: Icons.people,

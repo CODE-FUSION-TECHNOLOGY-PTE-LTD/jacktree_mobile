@@ -29,6 +29,14 @@ class JackTreeApp extends StatelessWidget {
         textTheme: brightness == Brightness.light
             ? ThemeData.light().textTheme.copyWith(
                   bodyLarge: const TextStyle(color: Colors.black, fontSize: 16),
+                  headlineLarge: GoogleFonts.robotoFlex(
+                    textStyle: const TextStyle(
+                      color: Colors.black,
+                      fontSize: 15,
+                      fontWeight: FontWeight.normal,
+                      letterSpacing: 0.2,
+                    ),
+                  ),
                   headlineSmall: TextStyle(
                       color: Colors.black,
                       fontSize: 20,
@@ -107,6 +115,14 @@ class JackTreeApp extends StatelessWidget {
                 )
             : ThemeData.dark().textTheme.copyWith(
                   bodyLarge: const TextStyle(color: Colors.white),
+                  headlineLarge: GoogleFonts.robotoFlex(
+                    textStyle: const TextStyle(
+                      color: Colors.white,
+                      fontSize: 15,
+                      fontWeight: FontWeight.normal,
+                      letterSpacing: 0.2,
+                    ),
+                  ),
                   headlineSmall: TextStyle(
                       color: Colors.black,
                       fontSize: 20,
