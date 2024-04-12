@@ -1,8 +1,11 @@
+import 'dart:html';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:jack_tree_app/features/home/screens/home_main_screen.dart';
+import 'package:jack_tree_app/features/terms_and_condition/screens/terms_and_condition_screen.dart';
 
 class ListDrawerWidget extends ConsumerStatefulWidget {
   const ListDrawerWidget({super.key});
@@ -234,6 +237,15 @@ class _ListDrawerWidgetState extends ConsumerState<ListDrawerWidget> {
                       leading: const Icon(Icons.person),
                       title: const Text('My Account'),
                       onTap: () {},
+                    ),
+                    Divider(), // Add a Divider after the seventh ListTile
+                    ListTile(
+                      leading: const Icon(Icons.rule_sharp),
+                      title: const Text('Terms And Condition'),
+                      onTap: () {
+                        Navigator.of(context).push(MaterialPageRoute(
+                            builder: (ctx) => TearmsAndConditionScreen()));
+                      },
                     ),
                     Divider(), // Add a Divider after the seventh ListTile
                     ListTile(
