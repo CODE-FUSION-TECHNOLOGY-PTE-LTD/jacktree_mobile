@@ -1,9 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:jack_tree_app/splash_screen.dart';
 
 void main() {
-  runApp(const JackTreeApp());
+  runApp(
+    ProviderScope(
+      child: const JackTreeApp(),
+    ),
+  );
 }
 
 class JackTreeApp extends StatelessWidget {
@@ -24,7 +29,24 @@ class JackTreeApp extends StatelessWidget {
         textTheme: brightness == Brightness.light
             ? ThemeData.light().textTheme.copyWith(
                   bodyLarge: const TextStyle(color: Colors.black, fontSize: 16),
-
+                  headlineLarge: GoogleFonts.robotoFlex(
+                    textStyle: const TextStyle(
+                      color: Colors.black,
+                      fontSize: 15,
+                      fontWeight: FontWeight.normal,
+                      letterSpacing: 0.2,
+                    ),
+                  ),
+                  headlineSmall: TextStyle(
+                      color: Colors.black,
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                      fontFamily: AutofillHints.transactionAmount),
+                  headlineMedium: TextStyle(
+                      color: Theme.of(context).colorScheme.primary,
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                      fontFamily: AutofillHints.transactionAmount),
                   bodyMedium: GoogleFonts.poppins(
                     textStyle: const TextStyle(
                       color: Colors.white,
@@ -48,6 +70,13 @@ class JackTreeApp extends StatelessWidget {
                     textStyle: const TextStyle(
                       color: Color(0xFFF3AF4A),
                       fontSize: 30,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  labelSmall: GoogleFonts.roboto(
+                    textStyle: const TextStyle(
+                      color: Colors.black,
+                      fontSize: 14,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
@@ -86,6 +115,24 @@ class JackTreeApp extends StatelessWidget {
                 )
             : ThemeData.dark().textTheme.copyWith(
                   bodyLarge: const TextStyle(color: Colors.white),
+                  headlineLarge: GoogleFonts.robotoFlex(
+                    textStyle: const TextStyle(
+                      color: Colors.white,
+                      fontSize: 15,
+                      fontWeight: FontWeight.normal,
+                      letterSpacing: 0.2,
+                    ),
+                  ),
+                  headlineSmall: TextStyle(
+                      color: Colors.black,
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                      fontFamily: AutofillHints.transactionAmount),
+                  headlineMedium: TextStyle(
+                      color: Theme.of(context).colorScheme.primary,
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                      fontFamily: AutofillHints.transactionAmount),
                   bodyMedium: GoogleFonts.poppins(
                     textStyle: const TextStyle(
                       color: Colors.white,
@@ -133,6 +180,13 @@ class JackTreeApp extends StatelessWidget {
                     textStyle: const TextStyle(
                       color: Colors.white,
                       fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  labelSmall: GoogleFonts.roboto(
+                    textStyle: const TextStyle(
+                      color: Colors.white,
+                      fontSize: 14,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
