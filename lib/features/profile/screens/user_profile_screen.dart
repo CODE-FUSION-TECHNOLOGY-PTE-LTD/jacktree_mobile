@@ -75,35 +75,7 @@ class _UserProfileScreenState extends State<UserProfileScreen> {
                       height: MediaQuery.of(context).size.height * 0.3,
                     ),
                   ),
-                  // profile and Text
-                  // Positioned(
-                  //   top: MediaQuery.of(context).size.height * 0.1,
-                  //   left: MediaQuery.of(context).size.width * 0.2,
-                  //   child: Row(
-                  //     crossAxisAlignment: CrossAxisAlignment.center,
-                  //     children: [
-                  //       CircleAvatar(
-                  //         radius: 40,
-                  //         backgroundImage: AssetImage('assets/profile.avif'),
-                  //       ),
-                  //       SizedBox(width: 10),
-                  //       Column(
-                  //         children: [
-                  //           Text('John Smith',
-                  //               textAlign: TextAlign.start,
-                  //               style:
-                  //                   Theme.of(context).textTheme.displayMedium),
-                  //           SizedBox(height: 5),
-                  //           Text(
-                  //             'example@gmail.com',
-                  //             textAlign: TextAlign.start,
-                  //             style: Theme.of(context).textTheme.labelSmall,
-                  //           ),
-                  //         ],
-                  //       ),
-                  //     ],
-                  //   ),
-                  // ),
+               
                   // Positioned Container
                   Positioned(
                     top: MediaQuery.of(context).size.height * 0.23,
