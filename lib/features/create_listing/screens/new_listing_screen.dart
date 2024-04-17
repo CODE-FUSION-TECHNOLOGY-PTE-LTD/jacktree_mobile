@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 
 class NewListingScreen extends StatefulWidget {
@@ -30,26 +29,27 @@ class _NewListingScreenState extends State<NewListingScreen> {
                       height: 400,
                       decoration: const BoxDecoration(
                         shape: BoxShape.circle,
-                        color: Color(0xFFF3AF4A),
+                        color: const Color(0xFFF3AF4A),
                       ),
                     ),
                   ),
-                  //top
                   Positioned(
-                    top: -90,
-                    right: -20,
+                    top: -100,
+                    left: -200,
                     child: Container(
-                      width: 580,
-                      height: 400,
-                      decoration: const BoxDecoration(
+                      width: 700,
+                      height: 360,
+                      decoration: BoxDecoration(
                         shape: BoxShape.circle,
-                        color: Color(0xFFF3AF4A),
+                        border: Border.all(
+                          color: Color.fromARGB(255, 255, 255, 255),
+                          width: 2.0,
+                        ),
                       ),
                     ),
                   ),
-
                   Positioned(
-                    top: -150,
+                    top: -140,
                     left: 30,
                     child: Container(
                       width: 400,
@@ -61,86 +61,37 @@ class _NewListingScreenState extends State<NewListingScreen> {
                     ),
                   ),
                   Positioned(
-                    top: -200,
-                    left: -80,
-                    child: Container(
-                      width: 700,
-                      height: 460,
-                      decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        border: Border.all(
-                          color: Color.fromARGB(255, 255, 255, 255),
-                          width: 2.0,
-                        ),
-                      ),
-                    ),
-                  ),
-                  Positioned(
-                    top: -100,
+                    top: -50,
                     left: 50,
-                    child: Container(
-                      width: 410,
-                      height: 350,
-                      decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        color: Color(0xFFF3AF4A),
-                      ),
-                    ),
-                  ),
-                    Positioned(
-                    top: 50,
-                    left: 30,
                     child: Container(
                       width: 700,
                       height: 460,
                       child: Row(
                         children: [
-                          Text('Create for free adds here',style: Theme.of(context).textTheme.bodySmall,)
+                          Image.asset(
+                            'assets/logo-wight-lk.png',
+                            scale: 02,
+                          )
                         ],
                       ),
                     ),
                   ),
-                  // //bottom
-                  // Positioned(
-                  //   // Position from the bottom of the screen
-                  //   bottom: -(screenHeight * 0.18),
-                  //   right: -20,
-                  //   child: Container(
-                  //     width: 580,
-                  //     height: 400,
-                  //     decoration: const BoxDecoration(
-                  //       shape: BoxShape.circle,
-                  //       color: Color(0xFFF3AF4A),
-                  //     ),
-                  //   ),
-                  // ),
-                  // Positioned(
-                  //   bottom: -(screenHeight * 0.2),
-                  //   left: -200,
-                  //   child: Container(
-                  //     width: 700,
-                  //     height: 360,
-                  //     decoration: BoxDecoration(
-                  //       shape: BoxShape.circle,
-                  //       border: Border.all(
-                  //         color: Colors.white,
-                  //         width: 2.0,
-                  //       ),
-                  //     ),
-                  //   ),
-                  // ),
-                  // Positioned(
-                  //   bottom: -(screenHeight * 0.24),
-                  //   left: 30,
-                  //   child: Container(
-                  //     width: 400,
-                  //     height: 400,
-                  //     decoration: BoxDecoration(
-                  //       shape: BoxShape.circle,
-                  //       color: Color(0xFFF3AF4A),
-                  //     ),
-                  //   ),
-                  // ),
+                  Positioned(
+                    top: 10,
+                    left: 40,
+                    child: Container(
+                      width: 700,
+                      height: 460,
+                      child: Row(
+                        children: [
+                          Text(
+                            'Create Your free Adds Here..',
+                            style: Theme.of(context).textTheme.titleSmall,
+                          )
+                        ],
+                      ),
+                    ),
+                  ),
 
                   //back button
                   Positioned(
@@ -191,7 +142,7 @@ class _NewListingScreenState extends State<NewListingScreen> {
 
             //form new listing
             Padding(
-              padding: const EdgeInsets.fromLTRB(0, 16, 22, 1),
+              padding: const EdgeInsets.fromLTRB(22, 16, 22, 1),
               child: Form(
                 key: listingNewKey,
                 child: Column(
