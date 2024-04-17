@@ -230,7 +230,7 @@ class _PendingApprovelScreenState extends ConsumerState<PendingApprovelScreen> {
                               print('cart press cancelled');
                             },
                             child: Container(
-                                width: 100,
+                                width: 150,
                                 height: 40,
                                 child: Text(
                                   'Pending Approvels',

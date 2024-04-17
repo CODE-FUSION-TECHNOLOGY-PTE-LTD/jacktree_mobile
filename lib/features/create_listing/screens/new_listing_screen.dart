@@ -78,7 +78,7 @@ class _NewListingScreenState extends State<NewListingScreen> {
                   ),
                   Positioned(
                     top: 10,
-                    left: 40,
+                    left: 50,
                     child: Container(
                       width: 700,
                       height: 460,
@@ -96,7 +96,7 @@ class _NewListingScreenState extends State<NewListingScreen> {
                   //back button
                   Positioned(
                     top: MediaQuery.of(context).size.height * 0.06,
-                    left: MediaQuery.of(context).size.width * 0.01,
+                    left: MediaQuery.of(context).size.width * 0.02,
                     child: Padding(
                       padding: const EdgeInsets.fromLTRB(26, 16, 8, 8),
                       child: Row(
