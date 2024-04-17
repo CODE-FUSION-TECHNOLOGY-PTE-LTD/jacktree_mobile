@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
+import 'package:jack_tree_app/features/my_listing/screens/my_listing_screen.dart';
 import 'package:jack_tree_app/features/profile/screens/user_profile_screen.dart';
 import 'package:jack_tree_app/features/terms_and_condition/screens/terms_and_condition_screen.dart';
 
@@ -197,7 +198,11 @@ class _ListDrawerWidgetState extends ConsumerState<ListDrawerWidget> {
                     ListTile(
                       leading: const Icon(Icons.my_library_add),
                       title: const Text('My Listnings'),
-                      onTap: () {},
+                      onTap: () {
+                        Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) => MyListingScreen(),
+                        ));
+                      },
                     ),
                     Divider(), // Add a Divider after the first ListTile
                     ListTile(
