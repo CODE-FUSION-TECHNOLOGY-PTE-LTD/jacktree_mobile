@@ -1,7 +1,7 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:jack_tree_app/features/home/widget/list_drawe_widget.dart';
+import 'package:jack_tree_app/features/payment/screens/payment_view_screen.dart';
 
 class PriceViewScreen extends ConsumerStatefulWidget {
   const PriceViewScreen({super.key});
@@ -13,6 +13,17 @@ class PriceViewScreen extends ConsumerStatefulWidget {
 
 class _PriceViewScreenState extends ConsumerState<PriceViewScreen> {
   bool switchValue = false;
+
+  Future<bool> paymentScreen() async {
+    try {
+      Navigator.of(context).push(MaterialPageRoute(
+        builder: (context) => PaymentViewScreen(),
+      ));
+      return true;
+    } catch (e) {}
+    return false;
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -335,7 +346,7 @@ class _PriceViewScreenState extends ConsumerState<PriceViewScreen> {
                                   borderRadius: BorderRadius.circular(10),
                                 ),
                               ),
-                              onPressed: () {},
+                              onPressed: paymentScreen,
                               child: Text(
                                 'Select',
                                 style: Theme.of(context).textTheme.labelLarge,
@@ -592,7 +603,7 @@ class _PriceViewScreenState extends ConsumerState<PriceViewScreen> {
                                   borderRadius: BorderRadius.circular(10),
                                 ),
                               ),
-                              onPressed: () {},
+                              onPressed: paymentScreen,
                               child: Text(
                                 'Select',
                                 style: Theme.of(context).textTheme.labelLarge,
@@ -850,7 +861,7 @@ class _PriceViewScreenState extends ConsumerState<PriceViewScreen> {
                                   borderRadius: BorderRadius.circular(10),
                                 ),
                               ),
-                              onPressed: () {},
+                              onPressed: paymentScreen,
                               child: Text(
                                 'Select',
                                 style: Theme.of(context).textTheme.labelLarge,
@@ -858,6 +869,7 @@ class _PriceViewScreenState extends ConsumerState<PriceViewScreen> {
                             ),
                           ),
                         ),
+                        
                       ],
                     ),
                   ),
