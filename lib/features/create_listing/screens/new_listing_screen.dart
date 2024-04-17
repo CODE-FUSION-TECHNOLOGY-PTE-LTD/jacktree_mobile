@@ -1,4 +1,4 @@
-import 'package:flutter/cupertino.dart';
+
 import 'package:flutter/material.dart';
 
 class NewListingScreen extends StatefulWidget {
@@ -84,6 +84,19 @@ class _NewListingScreenState extends State<NewListingScreen> {
                       decoration: BoxDecoration(
                         shape: BoxShape.circle,
                         color: Color(0xFFF3AF4A),
+                      ),
+                    ),
+                  ),
+                    Positioned(
+                    top: 50,
+                    left: 30,
+                    child: Container(
+                      width: 700,
+                      height: 460,
+                      child: Row(
+                        children: [
+                          Text('Create for free adds here',style: Theme.of(context).textTheme.bodySmall,)
+                        ],
                       ),
                     ),
                   ),

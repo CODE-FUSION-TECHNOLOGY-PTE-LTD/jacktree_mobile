@@ -6,15 +6,15 @@ import 'package:jack_tree_app/features/contact_us/screens/contact_us_screen.dart
 import 'package:jack_tree_app/features/home/widget/list_drawe_widget.dart';
 import 'package:jack_tree_app/features/priceing/screens/price_screen.dart';
 
-class MyListingScreen extends ConsumerStatefulWidget {
-  const MyListingScreen({super.key});
+class SavedSeacrchSceen extends ConsumerStatefulWidget {
+  const SavedSeacrchSceen({super.key});
 
   @override
   ConsumerState<ConsumerStatefulWidget> createState() =>
-      _MyListingScreenState();
+      _SavedSeacrchSceenState();
 }
 
-class _MyListingScreenState extends ConsumerState<MyListingScreen> {
+class _SavedSeacrchSceenState extends ConsumerState<SavedSeacrchSceen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -232,7 +232,7 @@ class _MyListingScreenState extends ConsumerState<MyListingScreen> {
                                 width: 100,
                                 height: 40,
                                 child: Text(
-                                  'My listing',
+                                  'Saved Search',
                                   style: Theme.of(context).textTheme.labelSmall,
                                 )),
                           ),
@@ -299,13 +299,6 @@ class _MyListingScreenState extends ConsumerState<MyListingScreen> {
                                     Icon(
                                       Icons.delete,
                                       color: Colors.red,
-                                    ),
-                                    Text(
-                                      '\$800',
-                                      style: TextStyle(
-                                          color: Theme.of(context)
-                                              .colorScheme
-                                              .secondary),
                                     ),
                                   ],
                                 ),

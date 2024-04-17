@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:jack_tree_app/features/my_listing/screens/my_listing_screen.dart';
 import 'package:jack_tree_app/features/profile/screens/user_profile_screen.dart';
+import 'package:jack_tree_app/features/saved_search/screens/saved_search_screen.dart';
 import 'package:jack_tree_app/features/terms_and_condition/screens/terms_and_condition_screen.dart';
 
 class ListDrawerWidget extends ConsumerStatefulWidget {
@@ -226,7 +227,11 @@ class _ListDrawerWidgetState extends ConsumerState<ListDrawerWidget> {
                     ListTile(
                       leading: const Icon(Icons.save_rounded),
                       title: const Text('Saved Search'),
-                      onTap: () {},
+                      onTap: () {
+                        Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) => SavedSeacrchSceen(),
+                        ));
+                      },
                     ),
                     Divider(), // Add a Divider after the fifth ListTile
                     ListTile(
