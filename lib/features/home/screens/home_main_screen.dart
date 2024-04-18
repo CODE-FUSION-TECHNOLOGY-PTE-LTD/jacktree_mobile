@@ -4,6 +4,8 @@ import 'package:flutter_svg/svg.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:jack_tree_app/features/about_us/screens/about_us_screen.dart';
 import 'package:jack_tree_app/features/catergory_view/screens/catergory_view_screen.dart';
+import 'package:jack_tree_app/features/contact_us/screens/contact_us_screen.dart';
+import 'package:jack_tree_app/features/create_listing/screens/new_listing_screen.dart';
 import 'package:jack_tree_app/features/home/widget/list_drawe_Widget.dart';
 import 'package:jack_tree_app/features/priceing/screens/price_screen.dart';
 
@@ -71,8 +73,12 @@ class _HomeMainScreenState extends ConsumerState<HomeMainScreen> {
                   text: 'Home',
                 ),
                 GButton(
-                  icon: Icons.shopping_basket,
-                  text: 'Cart',
+                  icon: Icons.phone,
+                  text: 'Contact Us',
+                  onPressed: () {
+                    Navigator.of(context).push(
+                        MaterialPageRoute(builder: (ctx) => ContactUsScreen()));
+                  },
                 ),
                 GButton(
                   icon: Icons.people_alt_rounded,
@@ -244,7 +250,9 @@ class _HomeMainScreenState extends ConsumerState<HomeMainScreen> {
                             padding: const EdgeInsets.all(8.0),
                             child: GestureDetector(
                               onTap: () {
-                                print('cart press');
+                                Navigator.of(context).push(MaterialPageRoute(
+                                  builder: (context) => NewListingScreen(),
+                                ));
                               },
                               onTapCancel: () {
                                 print('cart press cancelled');

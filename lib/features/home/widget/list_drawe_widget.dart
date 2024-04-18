@@ -1,7 +1,10 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
+import 'package:jack_tree_app/features/my_listing/screens/my_listing_screen.dart';
+import 'package:jack_tree_app/features/pending_approvels/screens/pending_approvel_screen.dart';
+import 'package:jack_tree_app/features/profile/screens/user_profile_screen.dart';
+import 'package:jack_tree_app/features/saved_search/screens/saved_search_screen.dart';
 import 'package:jack_tree_app/features/terms_and_condition/screens/terms_and_condition_screen.dart';
 
 class ListDrawerWidget extends ConsumerStatefulWidget {
@@ -197,21 +200,24 @@ class _ListDrawerWidgetState extends ConsumerState<ListDrawerWidget> {
                     ListTile(
                       leading: const Icon(Icons.my_library_add),
                       title: const Text('My Listnings'),
-                      onTap: () {},
+                      onTap: () {
+                        Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) => MyListingScreen(),
+                        ));
+                      },
                     ),
                     Divider(), // Add a Divider after the first ListTile
                     ListTile(
                       leading: const Icon(Icons.pending_rounded),
                       title: const Text('Pending Approvels'),
-                      onTap: () {},
+                      onTap: () {
+                        Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) => PendingApprovelScreen(),
+                        ));
+                      },
                     ),
                     Divider(), // Add a Divider after the second ListTile
-                    ListTile(
-                      leading: const Icon(Icons.archive_rounded),
-                      title: const Text('Archived Listings'),
-                      onTap: () {},
-                    ),
-                    Divider(), // Add a Divider after the third ListTile
+
                     ListTile(
                       leading: const Icon(Icons.message_rounded),
                       title: const Text('Messengers'),
@@ -221,7 +227,11 @@ class _ListDrawerWidgetState extends ConsumerState<ListDrawerWidget> {
                     ListTile(
                       leading: const Icon(Icons.save_rounded),
                       title: const Text('Saved Search'),
-                      onTap: () {},
+                      onTap: () {
+                        Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) => SavedSeacrchSceen(),
+                        ));
+                      },
                     ),
                     Divider(), // Add a Divider after the fifth ListTile
                     ListTile(
@@ -233,7 +243,10 @@ class _ListDrawerWidgetState extends ConsumerState<ListDrawerWidget> {
                     ListTile(
                       leading: const Icon(Icons.person),
                       title: const Text('My Account'),
-                      onTap: () {},
+                      onTap: () {
+                        Navigator.of(context).push(MaterialPageRoute(
+                            builder: (ctx) => UserProfileScreen()));
+                      },
                     ),
                     Divider(), // Add a Divider after the seventh ListTile
                     ListTile(
